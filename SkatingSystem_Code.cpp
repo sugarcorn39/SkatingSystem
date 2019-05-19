@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define Player_number 6
-#define Judge_number 5 //とりあえず奇数で
+#include "Setting.h"
 
 // 新規言語をスケーティングで勉強する
 
