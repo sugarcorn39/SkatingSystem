@@ -3,56 +3,56 @@
 #include <string.h>
 
 #define Player_number 6
-#define Judge_number 5 //‚Æ‚è‚ ‚¦‚¸Šï”‚Å
+#define Judge_number 5 //ã¨ã‚Šã‚ãˆãšå¥‡æ•°ã§
 
-// V‹KŒ¾Œê‚ğƒXƒP[ƒeƒBƒ“ƒO‚Å•×‹­‚·‚é
+// æ–°è¦è¨€èªã‚’ã‚¹ã‚±ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã§å‹‰å¼·ã™ã‚‹
 
-// ‚Ü‚¾‚Å‚«‚Ä‚¢‚È‚¢‚±‚Æ
-// “¯’…ˆ—–¢Š®¬
-// ƒXƒP[ƒeƒBƒ“ƒOˆ—‚ÌŠÖ”‰»
-// ƒtƒ@ƒCƒ‹‚©‚ç‚Ì“üo—Í
-// ƒT[ƒoEƒNƒ‰ƒCƒAƒ“ƒgˆ—
-// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‰»
+// ã¾ã ã§ãã¦ã„ãªã„ã“ã¨
+// åŒç€å‡¦ç†æœªå®Œæˆ
+// ã‚¹ã‚±ãƒ¼ãƒ†ã‚£ãƒ³ã‚°å‡¦ç†ã®é–¢æ•°åŒ–
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã®å…¥å‡ºåŠ›
+// ã‚µãƒ¼ãƒãƒ»ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆå‡¦ç†
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³åŒ–
 
 
 void QSort(int x[], int left, int right);
 void Swap(int x[], int i, int j);
 void ShowData(int x[], int n);
 
-/* ƒNƒCƒbƒNƒ\[ƒg‚ğs‚¤ */
+/* ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆã‚’è¡Œã† */
 void QSort(int x[], int left, int right)
 {
 	int i, j;
 	int pivot;
 
-	i = left;                      /* ƒ\[ƒg‚·‚é”z—ñ‚Ìˆê”Ô¬‚³‚¢—v‘f‚Ì“Yš */
-	j = right;                     /* ƒ\[ƒg‚·‚é”z—ñ‚Ìˆê”Ô‘å‚«‚¢—v‘f‚Ì“Yš */
+	i = left;                      /* ã‚½ãƒ¼ãƒˆã™ã‚‹é…åˆ—ã®ä¸€ç•ªå°ã•ã„è¦ç´ ã®æ·»å­— */
+	j = right;                     /* ã‚½ãƒ¼ãƒˆã™ã‚‹é…åˆ—ã®ä¸€ç•ªå¤§ãã„è¦ç´ ã®æ·»å­— */
 
-	pivot = x[(left + right) / 2]; /* Šî€’l‚ğ”z—ñ‚Ì’†‰›•t‹ß‚É‚Æ‚é */
+	pivot = x[(left + right) / 2]; /* åŸºæº–å€¤ã‚’é…åˆ—ã®ä¸­å¤®ä»˜è¿‘ã«ã¨ã‚‹ */
 
-	while (1) {                    /* –³ŒÀƒ‹[ƒv */
+	while (1) {                    /* ç„¡é™ãƒ«ãƒ¼ãƒ— */
 
-		while (x[i] < pivot)       /* pivot ‚æ‚è‘å‚«‚¢’l‚ª */
-			i++;                   /* o‚é‚Ü‚Å i ‚ğ‘‰Á‚³‚¹‚é */
+		while (x[i] < pivot)       /* pivot ã‚ˆã‚Šå¤§ãã„å€¤ãŒ */
+			i++;                   /* å‡ºã‚‹ã¾ã§ i ã‚’å¢—åŠ ã•ã›ã‚‹ */
 
-		while (pivot < x[j])       /* pivot ‚æ‚è¬‚³‚¢’l‚ª */
-			j--;                   /*  o‚é‚Ü‚Å j ‚ğŒ¸­‚³‚¹‚é */
-		if (i >= j)                /* i >= j ‚È‚ç */
-			break;                 /* –³ŒÀƒ‹[ƒv‚©‚ç”²‚¯‚é */
+		while (pivot < x[j])       /* pivot ã‚ˆã‚Šå°ã•ã„å€¤ãŒ */
+			j--;                   /*  å‡ºã‚‹ã¾ã§ j ã‚’æ¸›å°‘ã•ã›ã‚‹ */
+		if (i >= j)                /* i >= j ãªã‚‰ */
+			break;                 /* ç„¡é™ãƒ«ãƒ¼ãƒ—ã‹ã‚‰æŠœã‘ã‚‹ */
 
-		Swap(x, i, j);             /* x[i] ‚Æ x[j]‚ğŒğŠ· */
-		i++;                       /* Ÿ‚Ìƒf[ƒ^ */
+		Swap(x, i, j);             /* x[i] ã¨ x[j]ã‚’äº¤æ› */
+		i++;                       /* æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ */
 		j--;
 	}
-	//ShowData(x, 10);               /* “r’†Œo‰ß‚ğ•\¦ */
+	//ShowData(x, 10);               /* é€”ä¸­çµŒéã‚’è¡¨ç¤º */
 
-	if (left < i - 1)              /* Šî€’l‚Ì¶‚É 2 ˆÈã—v‘f‚ª‚ ‚ê‚Î */
-		QSort(x, left, i - 1);     /* ¶‚Ì”z—ñ‚ğ Q ƒ\[ƒg‚·‚é */
-	if (j + 1 <  right)            /* Šî€’l‚Ì‰E‚É 2 ˆÈã—v‘f‚ª‚ ‚ê‚Î */
-		QSort(x, j + 1, right);    /* ‰E‚Ì”z—ñ‚ğ Q ƒ\[ƒg‚·‚é */
+	if (left < i - 1)              /* åŸºæº–å€¤ã®å·¦ã« 2 ä»¥ä¸Šè¦ç´ ãŒã‚ã‚Œã° */
+		QSort(x, left, i - 1);     /* å·¦ã®é…åˆ—ã‚’ Q ã‚½ãƒ¼ãƒˆã™ã‚‹ */
+	if (j + 1 <  right)            /* åŸºæº–å€¤ã®å³ã« 2 ä»¥ä¸Šè¦ç´ ãŒã‚ã‚Œã° */
+		QSort(x, j + 1, right);    /* å³ã®é…åˆ—ã‚’ Q ã‚½ãƒ¼ãƒˆã™ã‚‹ */
 }
 
-/* ”z—ñ‚Ì—v‘f‚ğŒğŠ·‚·‚é */
+/* é…åˆ—ã®è¦ç´ ã‚’äº¤æ›ã™ã‚‹ */
 void Swap(int x[], int i, int j)
 {
 	int temp;
@@ -63,7 +63,7 @@ void Swap(int x[], int i, int j)
 }
 
 
-/* n ŒÂ‚Ìƒf[ƒ^‚ğ•\¦‚·‚é */
+/* n å€‹ã®ãƒ‡ãƒ¼ã‚¿ã‚’è¡¨ç¤ºã™ã‚‹ */
 void ShowData(int x[], int n)
 {
 	int i;
@@ -96,7 +96,7 @@ int main() {
 	{ 0, 1, 2, 4, 4, 6 },
 	{ 0, 2, 2, 5, 5, 5 },
 	{ 0, 1, 2, 5, 5, 6 },
-	{ 0, 1, 2, 6, 6, 6 } };//0—ñ‚ğo—Í—p‚Ì—ñ‚Æ‚·‚é
+	{ 0, 1, 2, 6, 6, 6 } };//0åˆ—ã‚’å‡ºåŠ›ç”¨ã®åˆ—ã¨ã™ã‚‹
 	*/
 	//	int index_mark[Player_number] = { 0 };
 	//	int majority[Player_number] = { 0 };
@@ -110,34 +110,34 @@ int main() {
 	int judge_num = 0;
 	do{
 		memset(buf, 0, sizeof(buf));
-		fprintf(stdout, "ƒWƒƒƒbƒW”Ô†‚ğ”¼Šp”š‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢i‚`F1C@‚aF2C@‚bF3Ccj\nƒWƒƒƒbƒW”Ô†F");
+		fprintf(stdout, "ã‚¸ãƒ£ãƒƒã‚¸ç•ªå·ã‚’åŠè§’æ•°å­—ã§å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ˆï¼¡ï¼š1ï¼Œã€€ï¼¢ï¼š2ï¼Œã€€ï¼£ï¼š3ï¼Œâ€¦ï¼‰\nã‚¸ãƒ£ãƒƒã‚¸ç•ªå·ï¼š");
 		fgets(buf, sizeof(buf), stdin);
-		//	fprintf(stdout, "”š‚ğo—Í\n");
+		//	fprintf(stdout, "æ•°å­—ã‚’å‡ºåŠ›\n");
 		//	fprintf(stdout, buf);
 
-		//“ü—Í‚ª”¼Šp”š‚©ƒ`ƒFƒbƒN
+		//å…¥åŠ›ãŒåŠè§’æ•°å­—ã‹ãƒã‚§ãƒƒã‚¯
 
-		judge_num = atoi(buf) - 1;//u0v~uƒWƒƒƒbƒW‚Ì”-1v‚ğ‚Æ‚é(ƒCƒ“ƒfƒbƒNƒX‚Ì‚½‚ß)
-		//	fprintf(stdout, "”’l‚ğo—Í\n");
+		judge_num = atoi(buf) - 1;//ã€Œ0ã€~ã€Œã‚¸ãƒ£ãƒƒã‚¸ã®æ•°-1ã€ã‚’ã¨ã‚‹(ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãŸã‚)
+		//	fprintf(stdout, "æ•°å€¤ã‚’å‡ºåŠ›\n");
 		//	fprintf(stdout, "%d", judge_num);
 
-		check_judge_num[judge_num] += 1;//“o˜^Ï‚İ
+		check_judge_num[judge_num] += 1;//ç™»éŒ²æ¸ˆã¿
 		if (check_judge_num[judge_num] > 1) {
-			fprintf(stdout, "d•¡‚µ‚Ä“o˜^‚µ‚æ‚¤‚Æ‚µ‚Ä‚¢‚Ü‚·I\n");
-			check_judge_num[judge_num] = 0;//d•¡‚ğ–h‚¢‚Å‚à‘‚«Š·‚¦‚ç‚ê‚Ä‚µ‚Ü‚Á‚Ä‚¢‚é
+			fprintf(stdout, "é‡è¤‡ã—ã¦ç™»éŒ²ã—ã‚ˆã†ã¨ã—ã¦ã„ã¾ã™ï¼\n");
+			check_judge_num[judge_num] = 0;//é‡è¤‡ã‚’é˜²ã„ã§ã‚‚æ›¸ãæ›ãˆã‚‰ã‚Œã¦ã—ã¾ã£ã¦ã„ã‚‹
 			continue;
 		}
 		int judged_rank = 0;
 		int check_input_rank = 0;
 
 		do {
-			check_input_rank = 0;//‰Šú‰»
+			check_input_rank = 0;//åˆæœŸåŒ–
 			for (int i = 0; i < Player_number; i++) {
 				check_rank_all[i] = i + 1;
 			}
-			fprintf(stdout, "‡ˆÊ‚ğ‚ğ”¼Šp”š(1~7)‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
+			fprintf(stdout, "é †ä½ã‚’ã‚’åŠè§’æ•°å­—(1~7)ã§å…¥åŠ›ã—ã¦ãã ã•ã„\n");
 			for (int i = 0; i < Player_number; i++) {
-				fprintf(stdout, "\n%d”Ô–Ú‚É—x‚Á‚½l‚Ì‡ˆÊ‚ÍH\n‡ˆÊF", i + 1);
+				fprintf(stdout, "\n%dç•ªç›®ã«è¸Šã£ãŸäººã®é †ä½ã¯ï¼Ÿ\né †ä½ï¼š", i + 1);
 				fgets(buf, sizeof(buf), stdin);
 				judged_rank = atoi(buf);
 				memset(buf, 0, sizeof(buf));
@@ -151,10 +151,10 @@ int main() {
 
 			}
 			if (check_input_rank == 0) {
-				fprintf(stdout, "“ü—Í‚É–â‘è‚È‚µ\n");
+				fprintf(stdout, "å…¥åŠ›ã«å•é¡Œãªã—\n");
 			}
 			else {
-				fprintf(stdout, "“ü—Íƒ~ƒX‚ ‚èI\n");
+				fprintf(stdout, "å…¥åŠ›ãƒŸã‚¹ã‚ã‚Šï¼\n");
 			}
 
 		} while (check_input_rank != 0);
@@ -164,27 +164,27 @@ int main() {
 				break;
 			}
 		}
-		fprintf(stdout, "check_judge_numall@%d\n", check_judge_numall);
+		fprintf(stdout, "check_judge_numallã€€%d\n", check_judge_numall);
 	} while (check_judge_numall != Judge_number);
 
-	//ƒJƒ“ƒ}‚ÅØ‚é
+	//ã‚«ãƒ³ãƒã§åˆ‡ã‚‹
 
-	//‚»‚ê‚¼‚ê‚Ì‘Iè‚ÉŠ„‚è“–‚Ä‚é
+	//ãã‚Œãã‚Œã®é¸æ‰‹ã«å‰²ã‚Šå½“ã¦ã‚‹
 
-	//‚Ù‚ñ‚Æ‚Í‘Iè‚ğ\‘¢‘Ì‰»‚µAtable‚ÆŒ‹‚Ñ‚Â‚¯‚éB
+	//ã»ã‚“ã¨ã¯é¸æ‰‹ã‚’æ§‹é€ ä½“åŒ–ã—ã€tableã¨çµã³ã¤ã‘ã‚‹ã€‚
 	//	int b[Player_number + 1] = { 1,1,1,1,1,1 };
 		//input
-		//‚Ü‚¸‚Í‰Šú’l‚Æ‚µ‚Ä“ü‚ê‚Ä‚İ‚é
+		//ã¾ãšã¯åˆæœŸå€¤ã¨ã—ã¦å…¥ã‚Œã¦ã¿ã‚‹
 		//check input
 
-		//Table‚Ì“ü—Í
+		//Tableã®å…¥åŠ›
 /*	int check = 0;
 	do{
 		fprintf(stdout, "Table input\n");
 		fprintf(stdout, "Judge is 5 member\n");
 		for (int j = 0; j < Judge_number; j++) {
 			for (int i = 0; i < Player_number; i++) {
-				fprintf(stdout, "%dƒWƒƒƒbƒW‚Ì%d”Ô‚Ì‡ˆÊ‚ÍH", j, i);
+				fprintf(stdout, "%dã‚¸ãƒ£ãƒƒã‚¸ã®%dç•ªã®é †ä½ã¯ï¼Ÿ", j, i);
 				fprintf(stdin, "%d", Table[i][j]);
 			}
 			fprintf(stdout, "\n");
@@ -193,8 +193,8 @@ int main() {
 		fprintf(stdin, "%d", check);
 	}while(check != 1);
 */
-		//Table‚Ìo—Í
-		fprintf(stdout, "ˆÈ‰º‚Ì“à—e‚Å“ü—Í‚ğó‚¯•t‚¯‚Ü‚µ‚½\n");
+		//Tableã®å‡ºåŠ›
+		fprintf(stdout, "ä»¥ä¸‹ã®å†…å®¹ã§å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã¾ã—ãŸ\n");
 		fprintf(stdout, "A\tB\tC\tD\tE\tF\tG\tH\n");
 		for (int i = 0; i < Player_number; i++) {
 			for (int j = 0; j < Judge_number; j++) {
@@ -207,12 +207,12 @@ int main() {
 		for (int j = 0; j < Judge_number; j++) {
 			Table_sort[i][j + 1] = Table[i][j];
 		}
-	}//ƒNƒCƒbƒNƒ\[ƒg
+	}//ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆ
 	for (int i = 0; i < Player_number; i++) {
 		QSort(Table_sort[i], 1, Judge_number);
-		Table_sort[i][0] = 1;//1ˆÊ‚©‚ç‚Ç‚ê‚¾‚¯‰º‚ª‚éi‰ÁZ‚·‚éj‚©‚Åƒ‰ƒ“ƒLƒ“ƒO‚·‚é‚½‚ß1‚ğ“ü‚ê‚Ä‚¢‚é
+		Table_sort[i][0] = 1;//1ä½ã‹ã‚‰ã©ã‚Œã ã‘ä¸‹ãŒã‚‹ï¼ˆåŠ ç®—ã™ã‚‹ï¼‰ã‹ã§ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã™ã‚‹ãŸã‚1ã‚’å…¥ã‚Œã¦ã„ã‚‹
 	}
-	//Table_sort‚Ìo—Í
+	//Table_sortã®å‡ºåŠ›
 	fprintf(stdout, "Table_sort \n");
 	for (int i = 0; i < Player_number; i++) {
 		for (int j = 1; j < Judge_number + 1; j++) {
@@ -223,22 +223,22 @@ int main() {
 
 	int center_num = Player_number / 2;
 	fprintf(stdout, "center = %d\n", center_num);
-	fprintf(stdout, "’†‰›’l \n");
+	fprintf(stdout, "ä¸­å¤®å€¤ \n");
 	for (int i = 0; i < Player_number; i++) {
-		fprintf(stdout, "%d”Ô %d\n", i, Table_sort[i][center_num]);
+		fprintf(stdout, "%dç•ª %d\n", i, Table_sort[i][center_num]);
 	}
 
-	//skatingŠJn
+	//skatingé–‹å§‹
 	int award_rank = 1;
 	int check_rank = 1;
 
 	//while (award_rank <= Player_number) {
 		//center check
-	fprintf(stdout, "’Pƒ‚Éƒ\[ƒg\n");
+	fprintf(stdout, "å˜ç´”ã«ã‚½ãƒ¼ãƒˆ\n");
 
 		for (int i = 1; i < Player_number; i++) {
 			for (int j = 0; j <= i-1; j++) {
-//				fprintf(stdout, "ˆ—‘Oi=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "å‡¦ç†å‰i=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
 
 				if (Table_sort[j][center_num] < Table_sort[i][center_num]) {
 					Table_sort[i][0]++;
@@ -246,17 +246,17 @@ int main() {
 				if (Table_sort[j][center_num] > Table_sort[i][center_num]) {
 					Table_sort[j][0]++;
 				}
-//				fprintf(stdout, "	ˆ—Œãi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "	å‡¦ç†å¾Œi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
 			}
 		}
 
-		fprintf(stdout, "‰ß”¼”‚Åƒ\[ƒg\n");
+		fprintf(stdout, "éåŠæ•°ã§ã‚½ãƒ¼ãƒˆ\n");
 
 		for (int i = 1; i < Player_number; i++) {
 			for (int j = 0; j <= i - 1; j++) {
-//				fprintf(stdout, "ˆ—‘Oi=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "å‡¦ç†å‰i=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
 				if (Table_sort[j][0] == Table_sort[i][0]) {
-					//‰ß”¼”
+					//éåŠæ•°
 					int right = 0;
 					int check_majority = Table_sort[i][center_num];
 					while (right < Judge_number - center_num &&
@@ -272,20 +272,20 @@ int main() {
 						if (Table_sort[j][center_num + (right - 1)] != Table_sort[j][center_num + (right)]) {
 							if (Table_sort[i][center_num + (right - 1)] == Table_sort[i][center_num + (right)]) {
 								Table_sort[j][0]++;
-								break;//next ãˆÊ‰ÁZ‚Ö
+								break;//next ä¸Šä½åŠ ç®—ã¸
 							}
 						}
 					}
 				}
-//				fprintf(stdout, "	ˆ—Œãi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "	å‡¦ç†å¾Œi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
 			}
 		}
-		fprintf(stdout, "ãˆÊ‰ÁZ\n");
+		fprintf(stdout, "ä¸Šä½åŠ ç®—\n");
 		for (int i = 1; i < Player_number; i++) {
 			for (int j = 0; j <= i - 1; j++) {
-//				fprintf(stdout, "ˆ—‘Oi=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "å‡¦ç†å‰i=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
 				if (Table_sort[j][0] == Table_sort[i][0]) {
-					//ãˆÊ‰ÁZ
+					//ä¸Šä½åŠ ç®—
 					int sum_i = 0;
 					int sum_j = 0;
 					for (int index = 1; index < center_num; index++) {
@@ -299,15 +299,15 @@ int main() {
 						Table_sort[j][0]++;
 					}
 				}
-//				fprintf(stdout, "	ˆ—Œãi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "	å‡¦ç†å¾Œi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
 			}
 		}
-		fprintf(stdout, "‰ºˆÊ”äŠr\n");
+		fprintf(stdout, "ä¸‹ä½æ¯”è¼ƒ\n");
 		for (int i = 1; i < Player_number; i++) {
 			for (int j = 0; j <= i - 1; j++) {
-//				fprintf(stdout, "ˆ—‘Oi=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "å‡¦ç†å‰i=%d, j=%d, rank_i=%d, rank_j=%d", i, j, Table_sort[i][0], Table_sort[j][0]);
 				if (Table_sort[j][0] == Table_sort[i][0]) {
-					//‰ºˆÊ”äŠr
+					//ä¸‹ä½æ¯”è¼ƒ
 					int right = 0;
 					while (right < Judge_number - center_num &&
 						(Table_sort[j][center_num + (right)] == Table_sort[i][center_num + (right)])) {
@@ -321,18 +321,18 @@ int main() {
 							break;
 						}
 					}
-					//“¯’…
+					//åŒç€
 				}
-//				fprintf(stdout, "	ˆ—Œãi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
+//				fprintf(stdout, "	å‡¦ç†å¾Œi=%d, j=%d, rank_i=%d, rank_j=%d\n", i, j, Table_sort[i][0], Table_sort[j][0]);
 			}
 		}
 		//kekka
-		fprintf(stdout, "Œ‹‰Ê \n");
+		fprintf(stdout, "çµæœ \n");
 		for (int i = 0; i < Player_number; i++) {
-			fprintf(stdout, "%d”Ô@%dˆÊ\n", i, Table_sort[i][0]);
+			fprintf(stdout, "%dç•ªã€€%dä½\n", i, Table_sort[i][0]);
 		}
 
-		fprintf(stdout, "‡ˆÊ•\@o—Í \n");
+		fprintf(stdout, "é †ä½è¡¨ã€€å‡ºåŠ› \n");
 		{
 			int out_player_num = 0;
 			for (int i = 1; i <= Player_number; i++) {
@@ -341,7 +341,7 @@ int main() {
 						out_player_num = j;
 					}
 				}
-				fprintf(stdout, "%dˆÊ@%d”Ô\n", i, out_player_num);
+				fprintf(stdout, "%dä½ã€€%dç•ª\n", i, out_player_num);
 			}
 
 		}
@@ -355,13 +355,13 @@ int main() {
 		}
 		int INDEX_MARK_LEN = i;
 		//same number 1
-		//–¢Šm’è‡ˆÊ‚ÌãˆÊ‚ğ—^‚¦‚é@*
+		//æœªç¢ºå®šé †ä½ã®ä¸Šä½ã‚’ä¸ãˆã‚‹ã€€*
 		if (INDEX_MARK_LEN == 1) {
 			Table_sort[index_mark[i]][0] = award_rank;
-			//continue;//‚È‚­‚Ä‚à‚æ‚³‚»‚¤H
+			//continue;//ãªãã¦ã‚‚ã‚ˆã•ãã†ï¼Ÿ
 		}
 		else if (INDEX_MARK_LEN != 1) {
-			//‘½”Œˆ
+			//å¤šæ•°æ±º
 			for (int i = 0; i <= INDEX_MARK_LEN; i++) {
 				int j = 0;
 				while(j < Judge_number - center_num) {
@@ -371,7 +371,7 @@ int main() {
 				}
 				majority[i] = j;
 			}
-			//k[i]‚Ì’·‚³”äŠr
+			//k[i]ã®é•·ã•æ¯”è¼ƒ
 			int i = 0;
 			if (majority[i] < majority[i + 1]) {
 				if () {
@@ -382,7 +382,7 @@ int main() {
 
 			}
 			else if (majority[i] = majority[i + 1]) {
-				//ãˆÊ‰ÁZ
+				//ä¸Šä½åŠ ç®—
 				int check_sum[Player_number] = NULL;
 				for (int i = 0;;i++) {
 					check_sum[index_mark[i]] += Table_sort[index_mark[i]][i];
@@ -395,16 +395,16 @@ int main() {
 
 			
 			//same any numbers
-				//‘½”Œˆ
+				//å¤šæ•°æ±º
 					//*
-					//ãˆÊ‰ÁZ
+					//ä¸Šä½åŠ ç®—
 						//*
-						//‰ºˆÊ”äŠr
+						//ä¸‹ä½æ¯”è¼ƒ
 							//*
-							//“¯’…ˆ—
+							//åŒç€å‡¦ç†
 
-		//end for rank+j‚Í‚·‚é(jl‡ˆÊ‚ªŒˆ‚Ü‚Á‚½) check_rank++;
-	//end skating –¢Šm’è‡ˆÊ‚È‚µ
+		//end for rank+jã¯ã™ã‚‹(jäººé †ä½ãŒæ±ºã¾ã£ãŸ) check_rank++;
+	//end skating æœªç¢ºå®šé †ä½ãªã—
 
 	//output
 	*/
