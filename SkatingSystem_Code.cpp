@@ -270,8 +270,6 @@ int main(int argc, char** argv) {
 				memset(buf, 0, sizeof(buf));
 			}
 			
-			// TODO バグあり。計算による入力チェックはナンセンス。333444と順位を入れると、１～６の合計値と一致し0となるため
-			// check_input_rank が0になる。すなわち入力に問題なしと判断されてしまう。
 			for (int i = 0; i < PLAYER_NUMBER; i++) {
 				if(check_rank_all[i] != 1) {
 					check_input_rank = 1;
@@ -284,8 +282,7 @@ int main(int argc, char** argv) {
 
 		} while (check_input_rank != 0);
 		
-		// TODO 終了条件を検討する必要がある
-		// テーブルに0があれば未入力状態のため、それを条件に繰り返しを抜ける
+		// 入力終了チェック
 		for(int i = 0; i < JUDGE_NUMBER; i++){
 			if(Table[0][i] == 0){
 				check_judge_numall =0;
@@ -398,7 +395,7 @@ int main(int argc, char** argv) {
 		// console出力
 		output_console(Table_sort);
 	}else if(output_mode == 1){
-		fprintf(outputfile, "csvファイルに出力します。");
+		fprintf(stdout, "csvファイルに出力します。");
 		FILE *outputfile;
 		outputfile = fopen(FILE_PATH FILE_NAME, "w");
 		if(outputfile == NULL){
