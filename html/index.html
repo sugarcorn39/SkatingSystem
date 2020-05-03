@@ -1,0 +1,96 @@
+<!DCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スケーティング実行サイト</title>
+        <link rel="stylesheet" type="text/css" href="./css/button.css">
+        <script type=text/javascript src="js/main.js"></script>
+            
+    </head>
+    <body>
+        <!--
+        <form name="judge-sheet-form">
+            <table>
+                <tr>
+                    <th>ジャッジシート</th>
+                </tr>
+                <tr>
+                    <td>背番号101</td>
+                    <td><input type="radio" name="player1" value="1" id="player1-rank1" checked="checked"><label for="player1-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player1" value="2" id="player1-rank2"><label for="player1-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player1" value="3" id="player1-rank3"><label for="player1-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player1" value="4" id="player1-rank4"><label for="player1-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player1" value="5" id="player1-rank5"><label for="player1-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player1" value="6" id="player1-rank6"><label for="player1-rank6" class="label">6位</label></td>
+                </tr>
+                <tr>
+                    <td>背番号148</td>
+                    <td><input type="radio" name="player2" value="1" id="player2-rank1" checked="checked"><label for="player2-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player2" value="2" id="player2-rank2"><label for="player2-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player2" value="3" id="player2-rank3"><label for="player2-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player2" value="4" id="player2-rank4"><label for="player2-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player2" value="5" id="player2-rank5"><label for="player2-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player2" value="6" id="player2-rank6"><label for="player2-rank6" class="label">6位</label></td>
+                </tr>
+                <tr>
+                    <td>背番号274</td>
+                    <td><input type="radio" name="player3" value="1" id="player3-rank1" checked="checked"><label for="player3-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player3" value="2" id="player3-rank2"><label for="player3-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player3" value="3" id="player3-rank3"><label for="player3-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player3" value="4" id="player3-rank4"><label for="player3-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player3" value="5" id="player3-rank5"><label for="player3-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player3" value="6" id="player3-rank6"><label for="player3-rank6" class="label">6位</label></td>
+                </tr>
+                <tr>
+                    <td>背番号255</td>
+                    <td><input type="radio" name="player4" value="1" id="player4-rank1" checked="checked"><label for="player4-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player4" value="2" id="player4-rank2"><label for="player4-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player4" value="3" id="player4-rank3"><label for="player4-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player4" value="4" id="player4-rank4"><label for="player4-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player4" value="5" id="player4-rank5"><label for="player4-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player4" value="6" id="player4-rank6"><label for="player4-rank6" class="label">6位</label></td>
+                </tr>
+                <tr>
+                    <td>背番号304</td>
+                    <td><input type="radio" name="player5" value="1" id="player5-rank1" checked="checked"><label for="player5-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player5" value="2" id="player5-rank2"><label for="player5-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player5" value="3" id="player5-rank3"><label for="player5-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player5" value="4" id="player5-rank4"><label for="player5-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player5" value="5" id="player5-rank5"><label for="player5-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player5" value="6" id="player5-rank6"><label for="player5-rank6" class="label">6位</label></td>
+                </tr>
+                <tr>
+                    <td>背番号806</td>
+                    <td><input type="radio" name="player6" value="1" id="player6-rank1" checked="checked"><label for="player6-rank1" class="label">1位</label></td>
+                    <td><input type="radio" name="player6" value="2" id="player6-rank2"><label for="player6-rank2" class="label">2位</label></td>
+                    <td><input type="radio" name="player6" value="3" id="player6-rank3"><label for="player6-rank3" class="label">3位</label></td>
+                    <td><input type="radio" name="player6" value="4" id="player6-rank4"><label for="player6-rank4" class="label">4位</label></td>
+                    <td><input type="radio" name="player6" value="5" id="player6-rank5"><label for="player6-rank5" class="label">5位</label></td>
+                    <td><input type="radio" name="player6" value="6" id="player6-rank6"><label for="player6-rank6" class="label">6位</label></td>
+                </tr>
+            </table>
+            <button type="button" onclick="func1()">送信</button>
+            <button type="button" onclick="sample2()">リセット</button>
+        </form>
+
+        -->
+
+        <h1>ジャッジシート</h1>
+
+        <h2>ワルツ</h2>
+
+        <h3>【ジャッジ名】</h3>
+        
+        <form method="POST" name="judgeSheet_form" onSubmit="return checkNumber()">
+            <table>
+                <!-- ジャッジシートを作成 -->
+                <tbody id="tbodyID">
+                </tbody>
+            </table>
+
+            <!-- TODO [検討]そもそも評価に重複があるようだったら送信できないようにするほうがいいか? -->
+            <input type="submit" value="送信">
+        </form>
+
+    </body>
+</html>

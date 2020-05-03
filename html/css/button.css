@@ -1,0 +1,25 @@
+input[type=radio]{
+    display: none; /* 非表示化 */
+}
+input[type="radio"]:checked + label{ /* ここでは"radio"となっているのはなぜ？radioでも問題なかった */
+    background: #31A9EE;
+    color: #ffffff;
+}
+.label:hover {
+    background-color:#E2EDF9;
+}
+.label{
+    display: block; /* ブロックレベルの要素化 */
+    float: left;
+    margin: 5px; /* ラベル外側の余白を指定する */
+    width: 100px;
+    height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #b20000;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    border: 2px solid #006DD9; /* ラベルの境界線を実線で指定する */
+    border-radius:5px;/* 角丸にする */
+}
